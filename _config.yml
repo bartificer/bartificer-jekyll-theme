@@ -1,0 +1,9 @@
+theme: jekyll-theme-bartificer
+title: Bartificer Theme Test Site
+description: A test site for the Bartificer Jekyll Theme
+sass:
+  sass_dir: _sass
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

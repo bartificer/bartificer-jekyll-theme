@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Include  main CSS (with Bootstrap 4 compiled in) -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/main.css">
+    
+    <!-- Include Github-style Syntax Highlighting CSS -->
+    <link rel="stylesheet" href="{{site.baseurl}}/assets/syntax-github.css">
+    
+    <!-- Include Font Awesome 5 from CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <!-- Set the page title to the site name -->
+    <title>{{site.name}}</title>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{site.name}}</h1>
+            <p class="lead">{{site.description}}</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        {{ content }}
+    </main>
+    
+    <!-- Include Bootstrap JavaScript from local bundle -->
+    <script src="{{site.baseurl}}/assets/bootstrap.bundle.min.js"></script>
+</body>
+</html>
