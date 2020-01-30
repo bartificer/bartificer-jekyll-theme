@@ -31,14 +31,27 @@ Or install it yourself as:
 
 Add the desired logo as the file `assets/logo.png`. The logo should be square, and ideally 512px on each side.
 
-### Add Navbar Links
+### Add Site Navigation Items
 
-To add links to the navigation bart under the logo create the file `_includes/sitenav-nav-items.html` and add Bootstrap 4 nav items as list items, e.g.:
+Items can be added to the site navigation by defining an array of hashes named `nav_items` in your `_config.yml` file.
 
-```html
-<li class="nav-item">
-    <a class="nav-item" href="https://bartb.ie/">Bart's Home Page</a>
-</li>
+Each hash in the array supports the following keys:
+
+| Key | Type | Required | Description |
+| :---: | :---: | :--: | :--- |
+| `url` | string | ✅ | The relative or absolute URL the link should lead to. |
+| `text` | string | ✅ | The text for the link. |
+| `icon` | string | | The classes for a Font Awesome 5 icon, e.g. `'fab fa-twitter'`. |
+
+Example:
+
+```yaml
+nav_items:
+  - text: "Bart's Site"
+    url: http://www.bartb.ie/
+    icon: "fas fa-globe"
+  - text: "Yaml Cheat-Sheet"
+    url: https://lzone.de/cheat-sheet/YAML
 ```
 
 ## Contributing

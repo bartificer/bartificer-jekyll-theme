@@ -40,6 +40,13 @@ $theme-colors: (
 // Style the page
 //
 
+// make the icons on the site nav disapear for uncollapsed small screens
+.sitenav-icon{
+    @extend .d-inline;
+    @extend .d-sm-none;
+    @extend .d-md-inline;
+}
+
 // add the accent colour to the headers
 h1, h2, h3, h4, h5, h6{
     color: $accent;

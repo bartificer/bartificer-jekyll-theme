@@ -51,3 +51,11 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# theme-specific options
+community:
+  url: http://www.bartb.ie/contact
+nav_items:
+  - url: http://www.bartb.ie/
+    icon: "fas fa-globe"
+    text: "Bart's Site"
