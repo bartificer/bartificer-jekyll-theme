@@ -2,3 +2,9 @@
 .DS_Store
 
 *.komodoproject
+
+.jekyll-cache/
+
+Gemfile.lock
+
+test/_site/

@@ -17,10 +17,20 @@
     <title>{{site.name}}</title>
 </head>
 <body>
-    <header class="jumbotron jumbotron-fluid">
+    <header class="bg-accent-light mb-3">
         <div class="container">
-            <h1 class="display-4">{{site.name}}</h1>
-            <p class="lead">{{site.description}}</p>
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 text-center d-md-none">
+                    <img src="{{site.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-sx">
+                </div>
+                <div class="col-3 col-xl-2 d-none d-md-block">
+                    <img src="{{site.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-md">
+                </div>
+                <div class="col text-center text-md-left">
+                    <h1 class="display-3">{{site.title}}</h1>
+                    <p class="lead text-muted">{{site.description}}</p>
+                </div>
+            </div>
         </div>
     </header>
     

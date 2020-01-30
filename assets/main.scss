@@ -1,6 +1,47 @@
 ---
 ---
 
+// load desired Google fonts
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
+//
+// set Bootstrap variables
+//
+
+// set the headings font
+$headings-font-family: "Exo 2", sans-serif;
+
+// add accent colours
+$accent:  #93C020;
+$accent-light:  #fff5e6;
+$theme-colors: (
+    "accent": $accent,
+    "accent-light": $accent-light
+);
+
 // import bootstrap
 @import "bootstrap/bootstrap";
+
+// add the accent colour to the headers
+h1, h2, h3, h4, h5, h6{
+    color: $accent;
+}
+
+// style the logo in the header
+img#logo-header-sx{
+    height: 128px;
+    @extend .mx-auto;
+}
+img#logo-header-md{
+    @extend .img-fluid;
+}
+
+// style the box around code regions
+main pre.highlight{
+    @extend .mx-5;
+    @extend .p-1;
+    @extend .border;
+    border-color: $accent;
+    @extend .rounded;
+}
 
