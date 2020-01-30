@@ -55,6 +55,13 @@ plugins:
 # theme-specific options
 community:
   url: http://www.bartb.ie/contact
+  icon: "far fa-envelope"
+  labels:
+    nav: "Contact"
+    button: "Contact Form"
+  tagline: "Get in Touch"
+  description: "You can get in touch with Bart via his contact form."
+  
 nav_items:
   - url: http://www.bartb.ie/
     icon: "fas fa-globe"

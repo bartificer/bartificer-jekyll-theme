@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+{% include defaults.txt %}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -47,7 +48,10 @@
               </li>
               {% if site.community.url %}
               <li class="nav-item">
-                  <a href="{{site.community.url}}" class="nav-link"><i class="fas fa-users sitenav-icon" aria-hidden></i> Community</a>
+                  <a href="{{ site.community.url }}" class="nav-link">
+                    <i class="{{ site.community.icon | default: default_community_icon }} sitenav-icon" aria-hidden></i>
+                    {{ site.community.labels.nav | default: 'Community' }}
+                </a>
               </li>
               {% endif %}
               {% for item in site.nav_items %}
@@ -70,6 +74,17 @@
     
     <main class="container mt-3">
         {{ content }}
+        
+        {% if site.community.description and site.community.url %}
+        <div class="alert alert-info">
+            <h1 class="alert-heading h4">{{ site.community.tagline | default: 'Join the Community' }}</h1>
+            {{ site.community.description | markdownify }}
+            <p><a href="{{ site.community.url }}" class="btn btn-primary">
+                <i class="{{ site.community.icon | default: default_community_icon }}" aria-hidden"></i></span>
+                {{ site.commuinity.labels.button | default: 'Join In' }}
+            </a></p>
+        </div>
+        {% endif %}
     </main>
     
     <!-- Include jQuery from local file -->

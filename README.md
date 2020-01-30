@@ -54,6 +54,26 @@ nav_items:
     url: https://lzone.de/cheat-sheet/YAML
 ```
 
+### Adding Community Links
+
+Community links can be added to the site navigation and as an alert at the bottom of the page.
+
+To show the community information add a hash named `community` to your `_config.yml` file.
+
+To enable the link in the navibation `community.url` must be set. To enable the alert both
+`community.url` and `community.description` must be set.
+
+Additional optional keys can be used to customise the display of the community information.
+
+| Key | Type | Required | Description |
+| :---: | :---: | :--: | :--- |
+| `url` | string | ✅ | The URL the community link and buttoin should lead to. |
+| `description` | Markdown string | | The text to be shown in the community alert in Markdown format. |
+| `icon` | string | | The classes for a Font Awesome 5 icon, e.g. `'fab fa-twitter'` to be used in the side navigation and the button in the community alert. |
+| `tagline` | string | | The title for the community alert. Defaults to 'Join the Community'. |
+| `labels.nav` | string | | The label for the community link in the navigation. Defaults to 'Community'. |
+| `labels.button` | string | | The label for the buttin in the community alert. Defaults to 'Join In'. |
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
