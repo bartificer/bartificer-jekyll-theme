@@ -17,7 +17,7 @@
     <title>{{site.name}}</title>
 </head>
 <body>
-    <header class="bg-accent-light mb-3">
+    <header class="bg-accent-light">
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 text-center d-md-none">
@@ -34,7 +34,23 @@
         </div>
     </header>
     
-    <main class="container">
+    
+    <nav class="navbar navbar-dark bg-accent">
+        <a href="https://bartificer.net/" target="_blank" class="navbar-brand">
+            <img src="{{site.baseurl}}/assets/logo-bartificer-brand.png" alt="Bartificer Creations Logo" title="A Bartificer Creation" class="rounded" width="30" height="30">
+            <span class="d-none d-lg-inline font-bartificer ml-1">A Bartificer Creation</span>
+        </a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="{{site.baseurl}}/" class="nav-link">Home</a>
+            </li>
+            {% include sitenav-nav-items.html %}
+        </ul>
+        {% if site.github.repository_url %}{% endif %} <!-- for later! -->
+        <a href="{{site.github.repository_url}}" class="btn btn-outline-accent-light">View on GitHub</a>
+    </nav>
+    
+    <main class="container mt-3">
         {{ content }}
     </main>
     

@@ -1,10 +1,6 @@
 # jekyll-theme-bartificer
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
-
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
+A Jekyll theme for use on GitHub pages for Bartificer Creations open source projects and tutotial series.
 
 
 ## Installation
@@ -31,7 +27,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+### Set a Site Logo
+
+Add the desired logo as the file `assets/logo.png`. The logo should be square, and ideally 512px on each side.
+
+### Add Navbar Links
+
+To add links to the navigation bart under the logo create the file `_includes/sitenav-nav-items.html` and add Bootstrap 4 nav items as list items, e.g.:
+
+```html
+<li class="nav-item">
+    <a class="nav-item" href="https://bartb.ie/">Bart's Home Page</a>
+</li>
+```
 
 ## Contributing
 

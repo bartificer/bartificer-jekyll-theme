@@ -1,11 +1,16 @@
 ---
 ---
 
-// load desired Google fonts
+//
+// load web fonts
+//
+
+// load the Bartificer font "Exo 2" from Google fonts
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+$font-family-bartificer: "Exo 2", sans-serif;
 
 //
-// set Bootstrap variables
+// set Bootstrap variables and import Bootstrap
 //
 
 // set the headings font
@@ -21,6 +26,19 @@ $theme-colors: (
 
 // import bootstrap
 @import "bootstrap/bootstrap";
+
+//
+// define style classes
+//
+
+// 
+.font-bartificer{
+    font-family: $font-family-bartificer;
+}
+
+//
+// Style the page
+//
 
 // add the accent colour to the headers
 h1, h2, h3, h4, h5, h6{
