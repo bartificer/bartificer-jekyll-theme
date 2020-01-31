@@ -43,7 +43,7 @@ Each hash in the array supports the following keys:
 | `text` | string | ✅ | The text for the link. |
 | `icon` | string | | The classes for a Font Awesome 5 icon, e.g. `'fab fa-twitter'`. |
 
-Example:
+#### Example:
 
 ```yaml
 nav_items:
@@ -73,6 +73,19 @@ Additional optional keys can be used to customise the display of the community i
 | `tagline` | string | | The title for the community alert. Defaults to 'Join the Community'. |
 | `labels.nav` | string | | The label for the community link in the navigation. Defaults to 'Community'. |
 | `labels.button` | string | | The label for the buttin in the community alert. Defaults to 'Join In'. |
+
+#### Example
+
+```yaml
+community:
+  url: http://www.bartb.ie/contact
+  icon: "far fa-envelope"
+  labels:
+    nav: "Contact"
+    button: "Contact Form"
+  tagline: "Get in Touch"
+  description: "You can get in touch with Bart via his contact form."
+```
 
 ## Contributing
 

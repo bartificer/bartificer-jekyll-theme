@@ -31,9 +31,23 @@ $theme-colors: (
 // define style classes
 //
 
-// 
+// The Bartificer font
 .font-bartificer{
     font-family: $font-family-bartificer;
+}
+
+// Muted accented text
+.text-muted-accent{
+    color: theme-color-level(accent, -2);
+    
+    a:link, a:visited, a:active{
+        color: theme-color-level(accent, 2);
+        text-decoration: none;
+    }
+    a:hover{
+        color: theme-color-level(accent, 4);
+        text-decoration: underline;
+    }
 }
 
 //
