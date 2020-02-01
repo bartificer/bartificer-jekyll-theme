@@ -43,7 +43,8 @@
         </a>
         <div class="collapse navbar-collapse" id="siteNav">
           <ul class="navbar-nav">
-              <li class="nav-item">
+              {% assign home_path = site.baseurl | append: "/"  %}
+              <li class="nav-item{% if page.url == home_path %} active{% endif %}">
                   <a href="{{site.baseurl}}/" class="nav-link"><i class="fas fa-home sitenav-icon" aria-hidden></i> Home</a>
               </li>
               {% if site.community.url %}
@@ -86,6 +87,9 @@
         </div>
         {% endif %}
     </main>
+    
+    <!-- A spacer to take up the same amount of space as the floating footer -->
+    <div id="footer_wedge" class="m-0" style="height: 65px;"></div>
     
     <footer class="fixed-bottom bg-accent-light border-top border-accent">
         <div class="container py-2">
