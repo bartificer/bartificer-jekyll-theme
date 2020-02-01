@@ -17,7 +17,7 @@ $font-family-bartificer: "Exo 2", sans-serif;
 //
 
 // add the accent font
-$font-family-accent: {{ accent.font_family | default: '"Exo 2", sans-serif' }};
+$font-family-accent: {{ site.accent.font_family | default: '"Exo 2", sans-serif' }};
 .font-accent{
     font-family: $font-family-accent;
 }
@@ -26,8 +26,8 @@ $font-family-accent: {{ accent.font_family | default: '"Exo 2", sans-serif' }};
 $headings-font-family: $font-family-accent;
 
 // add accent colours
-$accent: {{ accent.color | default: "#93c020" }};
-$accent-light: {{ accent.color_light | default: "#fff5e6" }};
+$accent: {{ site.accent.color | default: "#93c020" }};
+$accent-light: {{ site.accent.color_light | default: "#fff5e6" }};
 $theme-colors: (
     "accent": $accent,
     "accent-light": $accent-light
