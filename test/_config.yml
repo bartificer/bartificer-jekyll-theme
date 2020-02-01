@@ -53,6 +53,10 @@ plugins:
 #   - vendor/ruby/
 
 # theme-specific options
+accent:
+  color: "#93c020"
+  color_light: "#fff5e6"
+  font_family: '"Exo 2", sans-serif'
 community:
   url: http://www.bartb.ie/contact
   icon: "far fa-envelope"

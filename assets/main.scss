@@ -9,16 +9,25 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
 $font-family-bartificer: "Exo 2", sans-serif;
 
+// load any custom web fonts defined by the user
+@import "custom_webfonts";
+
 //
 // set Bootstrap variables and import Bootstrap
 //
 
+// add the accent font
+$font-family-accent: {{ accent.font_family | default: '"Exo 2", sans-serif' }};
+.font-accent{
+    font-family: $font-family-accent;
+}
+
 // set the headings font
-$headings-font-family: "Exo 2", sans-serif;
+$headings-font-family: $font-family-accent;
 
 // add accent colours
-$accent:  #93C020;
-$accent-light:  #fff5e6;
+$accent: {{ accent.color | default: "#93c020" }};
+$accent-light: {{ accent.color_light | default: "#fff5e6" }};
 $theme-colors: (
     "accent": $accent,
     "accent-light": $accent-light
@@ -84,3 +93,5 @@ main pre.highlight{
     @extend .rounded;
 }
 
+// load any custom styles defined by the user
+@import "custom_styles";
