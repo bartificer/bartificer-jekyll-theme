@@ -99,17 +99,15 @@ main{
     blockquote.aside{
         @extend .alert;
         @extend .alert-secondary;
-        @extend .float-right;
-        @extend .m-0;
-        @extend .ml-3;
-        @extend .mb-3;
+        @extend .mx-5;
+        clear: both;
         h1{
             @extend .alert-heading;
             @extend .h4;
         }
     }
     
-    // style asides (blockquotes with class aside)
+    // style notices (blockquotes with class notice)
     blockquote.notice{
         @extend .alert;
         @extend .alert-warning;
