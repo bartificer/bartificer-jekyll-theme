@@ -27,6 +27,36 @@ Or install it yourself as:
 
 ## Usage
 
+### Render Section as an Aside
+
+This theme provides a speical block quote style for asides. Aside block quotes are rendered as secondary Bootstrap alerts.
+They should have a top-level header as their first piece of content. An info icon will be injected into the first child.
+
+#### Example
+
+```markdown
+> # Aside Header
+>
+> Aside contents.
+{: class="aside"}
+```
+
+### Render Section as a Notice
+
+This theme provides a speical block quote style for notices. Notice block quotes are rendered as warning Bootstrap alerts.
+They can have a top-level header as their first piece of content. An exclamation icon will be injected into the first child.
+
+#### Example
+
+```markdown
+> # Notice Header
+>
+> Notice contents.
+{: class="notice"}
+```
+
+
+
 ### Set a Site Logo
 
 Add the desired logo as the file `assets/logo.png`. The logo should be square, and ideally 512px on each side.

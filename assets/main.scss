@@ -84,13 +84,42 @@ img#logo-header-md{
     @extend .img-fluid;
 }
 
-// style the box around code regions
-main pre.highlight{
-    @extend .mx-5;
-    @extend .p-1;
-    @extend .border;
-    border-color: $accent;
-    @extend .rounded;
+// style the content area of the page
+main{
+    // style the box around code regions
+    pre.highlight{
+        @extend .mx-5;
+        @extend .p-1;
+        @extend .border;
+        border-color: $accent;
+        @extend .rounded;
+    }
+    
+    // style asides (blockquotes with class aside)
+    blockquote.aside{
+        @extend .alert;
+        @extend .alert-secondary;
+        @extend .float-right;
+        @extend .m-0;
+        @extend .ml-3;
+        @extend .mb-3;
+        h1{
+            @extend .alert-heading;
+            @extend .h4;
+        }
+    }
+    
+    // style asides (blockquotes with class aside)
+    blockquote.notice{
+        @extend .alert;
+        @extend .alert-warning;
+        @extend .mx-5;
+        clear: both;
+        h1{
+            @extend .alert-heading;
+            @extend .h4;
+        }
+    }
 }
 
 // load any custom styles defined by the user
