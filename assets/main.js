@@ -1,5 +1,11 @@
 // A jQuery document ready handler
 $(function(){
+    // inject the page title into the titlebar if applicable
+    const $pageTitle = $('main h1:first-child');
+    if($pageTitle.length){
+        $(document).prop('title', $pageTitle.text());
+    }
+    
     // inject an exclamation icon into to the first child of each notice
     const $notices = $('main blockquote.notice');
     for(const notice of $notices){

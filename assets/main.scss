@@ -86,6 +86,14 @@ img#logo-header-md{
 
 // style the content area of the page
 main{
+    // add extra space above headings
+    h2{
+        @extend .mt-4;
+    }
+    h3{
+        @extend .mt-3;
+    }
+    
     // style the box around code regions
     pre.highlight{
         @extend .mx-5;
@@ -93,6 +101,19 @@ main{
         @extend .border;
         border-color: $accent;
         @extend .rounded;
+    }
+    
+    // style tables
+    table{
+        @extend .table;
+        @extend .table-hover;
+        @extend .table-bordered;
+        
+        thead{
+            @extend .bg-accent;
+            @extend .text-accent-light;
+            @extend .font-accent;
+        }
     }
     
     // style asides (blockquotes with class aside)
