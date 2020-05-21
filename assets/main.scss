@@ -103,6 +103,17 @@ main{
         @extend .rounded;
     }
     
+    // style images
+    img{
+    	@extend .img-fluid;
+    	@extend .border;
+    	border-color: $accent;
+    	@extend .rounded;
+    	@extend .d-block;
+    	@extend .mx-auto;
+    	@extend .my-3;
+    }
+    
     // style tables
     table{
         @extend .table;
