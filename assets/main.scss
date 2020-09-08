@@ -96,6 +96,7 @@ main{
     
     // style the box around code regions
     pre.highlight{
+        @extend .bg-white;
         @extend .mx-5;
         @extend .p-1;
         @extend .border;
