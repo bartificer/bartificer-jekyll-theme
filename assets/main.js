@@ -1,7 +1,7 @@
 // A jQuery document ready handler
 $(function(){
     // inject the page title into the titlebar if applicable
-    const $pageTitle = $('main h1:first-child');
+    const $pageTitle = $('main h1').first();
     if($pageTitle.length){
         $(document).prop('title', $pageTitle.text());
     }
