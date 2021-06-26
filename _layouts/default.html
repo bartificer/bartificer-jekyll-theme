@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Include  main CSS (with Bootstrap 4 compiled in) -->
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/main.css">
+    <link rel="stylesheet" href="{{site.github.baseurl}}/assets/main.css">
     
     <!-- Include Github-style Syntax Highlighting CSS -->
-    <link rel="stylesheet" href="{{site.baseurl}}/assets/syntax-github.css">
+    <link rel="stylesheet" href="{{site.github.baseurl}}/assets/syntax-github.css">
     
     <!-- Include Font Awesome 5 from CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -22,10 +22,10 @@
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 text-center d-md-none">
-                    <img src="{{site.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-sx">
+                    <img src="{{site.github.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-sx">
                 </div>
                 <div class="col-3 col-xl-2 d-none d-md-block">
-                    <img src="{{site.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-md">
+                    <img src="{{site.github.baseurl}}/assets/logo.png" alt="Logo" id="logo-header-md">
                 </div>
                 <div class="col text-center text-md-left">
                     <h1 class="display-3">{{site.title}}</h1>
@@ -38,14 +38,14 @@
     
     <nav class="navbar navbar-dark navbar-expand-sm bg-accent">
         <a href="https://bartificer.net/" target="_blank" class="navbar-brand">
-            <img src="{{site.baseurl}}/assets/logo-bartificer-brand.png" alt="Bartificer Creations Logo" title="A Bartificer Creation" class="rounded" width="30" height="30">
+            <img src="{{site.github.baseurl}}/assets/logo-bartificer-brand.png" alt="Bartificer Creations Logo" title="A Bartificer Creation" class="rounded" width="30" height="30">
             <span class="d-none d-lg-inline font-bartificer ml-1">A Bartificer Creation</span>
         </a>
         <div class="collapse navbar-collapse" id="siteNav">
           <ul class="navbar-nav">
-              {% assign home_path = site.baseurl | append: "/"  %}
+              {% assign home_path = site.github.baseurl | append: "/"  %}
               <li class="nav-item{% if page.url == home_path %} active{% endif %}">
-                  <a href="{{site.baseurl}}/" class="nav-link"><i class="fas fa-home sitenav-icon" aria-hidden></i> Home</a>
+                  <a href="{{site.github.baseurl}}/" class="nav-link"><i class="fas fa-home sitenav-icon" aria-hidden></i> Home</a>
               </li>
               {% if site.community.url %}
               <li class="nav-item">
@@ -116,12 +116,12 @@
     </footer>
     
     <!-- Include jQuery from local file -->
-    <script src="{{site.baseurl}}/assets/jquery-3.4.1.min.js"></script>
+    <script src="{{site.github.baseurl}}/assets/jquery-3.4.1.min.js"></script>
     
     <!-- Include Bootstrap JavaScript from local bundle (bundle includes popper.js but not jQuery) -->
-    <script src="{{site.baseurl}}/assets/bootstrap.bundle.min.js"></script>
+    <script src="{{site.github.baseurl}}/assets/bootstrap.bundle.min.js"></script>
     
     <!-- Include the theme's core scripts -->
-    <script src="{{site.baseurl}}/assets/main.js"></script>
+    <script src="{{site.github.baseurl}}/assets/main.js"></script>
 </body>
 </html>
