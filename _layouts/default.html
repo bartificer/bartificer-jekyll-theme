@@ -15,9 +15,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
     <!-- Set the page title to the site name -->
-    <title>{{site.title}}</title>
+    <title>{{page.title | default: site.title}}</title>
 </head>
 <body>
+    <!-- Export select values from Jekyll Frontmatter -->
+    <input type="hidden" id="jekyll_frontmatter_page_title" value="{{page.title | escape}}">
+
     <header class="bg-accent-light">
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
