@@ -44,8 +44,8 @@
             {% capture default_nav_brand_url %}{{site.github.baseurl}}/assets/logo-bartificer-brand.png{% endcapture %}
             {% assign default_nav_brand_alt = "Bartificer Creations Logo" %}
             {% assign default_nav_brand_text = "A Bartificer Creation" %}
-            <img src="{{default_nav_brand_url}}" alt="{{default_nav_brand_alt}}" title="{{default_nav_brand_text}}" class="rounded" width="30" height="30">
-            <span class="d-none d-lg-inline font-bartificer ml-1">{{default_nav_brand_text}}</span>
+            <img src="{{nav_brand.url | default: default_nav_brand_url}}" alt="{{nav_brand.alt | default: default_nav_brand_alt}}" title="{{nav_brand.text | default: default_nav_brand_text}}" class="rounded" width="30" height="30">
+            <span class="d-none d-lg-inline font-bartificer ml-1">{{nav_brand.text | default: default_nav_brand_text}}</span>
         </a>
         <div class="collapse navbar-collapse" id="siteNav">
           <ul class="navbar-nav">
