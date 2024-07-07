@@ -14,7 +14,23 @@
     <!-- Include Font Awesome 5 from CDN -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
-    <!-- Set the page title to the site name -->
+    <!-- Add the OpenGraph Site-level Metadata -->
+    {% assign opengraph.site_name = site.opengraph.site_name | default: site.title %}
+    <meta property="og:site_name" content="{{opengraph.site_name}}" />
+    {% if site.opengraph.locale %}<meta property="og:locale" content="{{site.opengraph.locale}}" />{% endif %}
+
+    <!-- Add the OpenGraph Page-level Metadata -->
+    {% assign opengraph.title = page.opengraph.title | default: page.title | default: site.opengraph.default.title %}
+    <meta property="og:title" content="{{opengraph.title}}" />
+    {% if page.opengraph.description %}<meta property="og:description" content="{{page.opengraph.description}}" />{% endif %}
+    {% assign opengraph.type = page.opengraph.type | default: site.opengraph.default.type %}
+    {% if opengraph.type %}<meta property="og:type" content="{{opengraph.type}}" />{% endif %}
+    {% if page.opengraph.url %}<meta property="og:url" content="{{page.opengraph.url}}" />{% endif %}
+    {% assign opengraph.image = page.opengraph.image | default: site.opengraph.default.image %}
+    {% if opengraph.image %}<meta property="og:image" content="{{site.github.baseurl}}{{opengraph.image}}" />{% endif %}
+    {% if page.opengraph.audio %}<meta property="og:audio" content="{{page.opengraph.audio}}" />{% endif %}
+
+    <!-- Set the page title to the page title or site name -->
     <title>{{page.title | default: site.title}}</title>
 </head>
 <body>
