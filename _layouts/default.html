@@ -26,7 +26,7 @@
     {% if opengraph_type %}<meta property="og:type" content="{{opengraph_type}}" />{% endif %}
     {% if page.opengraph.url %}<meta property="og:url" content="{{page.opengraph.url}}" />{% endif %}
     {% assign opengraph_image = page.opengraph.image | default: site.opengraph.image %}
-    {% if opengraph_image %}<meta property="og:image" content="{{site.github.baseurl}}{{opengraph_image}}" />{% endif %}
+    {% if opengraph_image %}<meta property="og:image" content="{{opengraph_image}}" />{% endif %}
     {% if page.opengraph.audio %}<meta property="og:audio" content="{{page.opengraph.audio}}" />{% endif %}
 
     <!-- Set the page title to the page title or site name -->
