@@ -2,16 +2,15 @@
 layout: default
 ---
 
-{{ content }}
-
-<h1>Debug</h1>
-
-<h2>Site</h2>
-<pre>
-    {{ site | inspect }}
-</pre>
-
-<h2>Page</h2>
-<pre>
-    {{ page | inspect }}
-</pre>
+<h1>Debug Data</h1>
+<form>
+    <div class="form-group">
+        <label for="debuggedData_TA">Example textarea</label>
+        <textarea class="form-control" id="debuggedData_TA" rows="30" aria-describedby="debugDataHelp">
+            {{ content }}
+        </textarea>
+        <small id="debugDataHelp" class="form-text text-muted">
+            To output the contents of a Liquid variable, use a liquid <code>echo</code> tag as the page contents, e.g. {% raw %}<code>{% echo site.title %}</code>{% endraw %}
+        </small>
+    </div>
+</form>
