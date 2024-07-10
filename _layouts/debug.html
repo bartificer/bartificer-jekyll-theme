@@ -3,11 +3,14 @@ layout: default
 ---
 
 <h1>Debug Data</h1>
+{% highlight page.highlight | default "text" %}
+    {{ content | strip_html }}
+{% endhighlight %}
 <form>
     <div class="form-group">
-        <label for="debuggedData_TA">Example textarea</label>
-        <textarea class="form-control" id="debuggedData_TA" rows="30" aria-describedby="debugDataHelp">
-            {{ content }}
+        <label for="debuggedData_TA">Debugged Data</label>
+        <textarea class="form-control text-mono" id="debuggedData_TA" rows="30" aria-describedby="debugDataHelp">
+            {{ content | strip_html }}
         </textarea>
         <small id="debugDataHelp" class="form-text text-muted">
             To output the contents of a Liquid variable, use a liquid <code>echo</code> tag as the page contents, e.g. {% raw %}<code>{% echo site.title %}</code>{% endraw %}
