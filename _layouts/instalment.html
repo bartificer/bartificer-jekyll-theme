@@ -4,8 +4,17 @@ layout: default
 
 {{ content }}
 
+{% assign page_collection = site.collections | where: "label", page.collection | first %}
 <div class="btn-group mt-5 w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
-    <a href="" class="btn btn-outline-primary">Previous</a>
-    <a href="" class="btn btn-outline-primary">Index</a>
-    <a href="" class="btn btn-outline-primary">Next</a>
+    {% if page.previous -%}
+    <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i> {{ page.previous.title }}</a>
+    {% else -%}
+    <a href="#" class="btn btn-outline-primary" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous</a>
+    {% endif -%}
+    <a href="/#{{ page_collection.label }}" class="btn btn-outline-primary">{{ page_collection.title }}</a>
+    {% if page.next -%}
+    <a href="{{ page.next.url }}" class="btn btn-outline-primary" role="button">{{ page.next.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i></a>
+    {% else -%}
+    <a href="#" class="btn btn-outline-primary" role="button" aria-disabled="true">No Next <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
+    {% endif -%}
 </div>
