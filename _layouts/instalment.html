@@ -9,12 +9,12 @@ layout: default
     {% if page.previous -%}
     <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i> {{ page.previous.title }}</a>
     {% else -%}
-    <a href="#" class="btn btn-outline-primary" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous</a>
+    <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
     {% endif -%}
     <a href="/#{{ page_collection.label }}" class="btn btn-outline-primary">{{ page_collection.title }}</a>
     {% if page.next -%}
     <a href="{{ page.next.url }}" class="btn btn-outline-primary" role="button">{{ page.next.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i></a>
     {% else -%}
-    <a href="#" class="btn btn-outline-primary" role="button" aria-disabled="true">No Next <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
+    <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">No Next (on Last) <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
     {% endif -%}
 </div>
