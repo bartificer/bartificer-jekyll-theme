@@ -1,6 +1,6 @@
-<pre>{{ my_collection | inspect | strip_html | strip }}</pre>
+<pre>{{ include.my_collection | inspect | strip_html | strip }}</pre>
 <ul>
-    {% for instalment in my_collection.docs -%}
+    {% for instalment in include.my_collection.docs -%}
     <li>{{ instalment.title }}</li>
     {% endfor -%}
 </ul>
