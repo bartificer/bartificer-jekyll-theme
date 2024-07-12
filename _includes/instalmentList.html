@@ -1,5 +1,5 @@
 <ul>
     {% for instalment in include.my_collection.docs -%}
-    <li>[{{ instalment.title }}]({{ instalment.url }})</li>
+    <li><a href="{{ instalment.url }}">{{ instalment.title }}</a></li>
     {% endfor -%}
 </ul>
