@@ -1,3 +1,4 @@
+<pre>{{ my_collection | inspect | strip_html | strip }}</pre>
 <ul>
     {% for instalment in my_collection.docs -%}
     <li>{{ instalment.title }}</li>
