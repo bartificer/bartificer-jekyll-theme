@@ -3,16 +3,14 @@ layout: default
 ---
 {% assign page_collection = site.collections | where: "label", page.collection | first -%}
 <h1>
-    {%- if page_collection.prefix -%}{{ page_collection.prefix }}{%- endif -%}
+    {%- if page_collection.prefix -%}{{ page_collection.prefix }} {%- endif -%}
     {%- if page.instalment -%}
-    {{ page.instalment }}
+    {{ page.instalment }} 
     {%- if page_collection.total -%}
     of {{ page_collection.total }}
     {%- endif -%}
     {%- endif -%}
-    {%- if page_collection.prefix or page_collection.instalment -%}
-    – 
-    {%- endif -%}
+    {%- if page_collection.prefix or page_collection.instalment -%} – {%- endif -%}
     {{ page.title }}
 </h1>
 
