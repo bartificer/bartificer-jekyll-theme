@@ -16,10 +16,6 @@ layout: default
 
 {{ content }}
 
-<h2>page.previous</h2>
-<pre>{{ page.previous | inspect | strip_html | strip }}</pre>
-<h2>page.next</h2>
-<pre>{{ page.next | inspect | strip_html | strip }}</pre>
 <div class="btn-group mt-5 w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
     {% if page.previous -%}
     <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>

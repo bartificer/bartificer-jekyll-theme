@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-{% include defaults.txt %}
+{% include defaults.txt -%}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,21 +16,32 @@
     
     <!-- Add the OpenGraph Site-level Metadata -->
     <meta property="og:site_name" content="{{site.opengraph.site_name | default: site.title}}" />
-    {% if site.opengraph.locale %}<meta property="og:locale" content="{{site.opengraph.locale}}" />{% endif %}
+    {% if site.opengraph.locale %}<meta property="og:locale" content="{{site.opengraph.locale}}" />{% endif -%}
 
     <!-- Add the OpenGraph Page-level Metadata -->
-    {% assign opengraph_title = page.opengraph.title | default: page.title | default: site.opengraph.title %}
-    {% if opengraph_title %}<meta property="og:title" content="{{opengraph_title}}" /> {% endif %}
-    {% if page.opengraph.description %}<meta property="og:description" content="{{page.opengraph.description}}" />{% endif %}
-    {% assign opengraph_type = page.opengraph.type | default: site.opengraph.type %}
-    {% if opengraph_type %}<meta property="og:type" content="{{opengraph_type}}" />{% endif %}
-    {% if page.opengraph.url %}<meta property="og:url" content="{{page.opengraph.url}}" />{% endif %}
-    {% assign opengraph_image = page.opengraph.image | default: site.opengraph.image %}
-    {% if opengraph_image %}<meta property="og:image" content="{{opengraph_image}}" />{% endif %}
-    {% if page.opengraph.audio %}<meta property="og:audio" content="{{page.opengraph.audio}}" />{% endif %}
+    {% assign opengraph_title = page.opengraph.title | default: page.title | default: site.opengraph.title -%}
+    {% if opengraph_title %}<meta property="og:title" content="{{opengraph_title}}" /> {% endif -%}
+    {% if page.opengraph.description %}<meta property="og:description" content="{{page.opengraph.description}}" />{% endif -%}
+    {% assign opengraph_type = page.opengraph.type | default: site.opengraph.type -%}
+    {% if opengraph_type %}<meta property="og:type" content="{{opengraph_type}}" />{% endif -%}
+    {% if page.opengraph.url %}<meta property="og:url" content="{{page.opengraph.url}}" />{% endif -%}
+    {% assign opengraph_image = page.opengraph.image | default: site.opengraph.image -%}
+    {% if opengraph_image %}<meta property="og:image" content="{{opengraph_image}}" />{% endif -%}
+    {% if page.opengraph.audio %}<meta property="og:audio" content="{{page.opengraph.audio}}" />{% endif -%}
 
-    <!-- Set the page title to the page title or site name -->
-    <title>{{page.title | default: site.title}}</title>
+    <!-- Set the page title as appropriate -->
+    {% if page.collection -%}
+    {% assign page_collection = site.collections | where: "label", page.collection | first -%}
+    <title>
+        {%- if page_collection.prefix %}{{ page_collection.prefix }}{% endif -%}
+        {%- if page_collection.prefix and page.instalment %} {% endif -%}
+        {%- if page.instalment %}{{ page.instalment }}{% endif -%}
+        {%- if page_collection.prefix or page.instalment %}: {% endif -%}
+        {{ page.title }}
+    </title>
+    {% else -%}
+    <title>{{ page.title | default: site.title }}</title>
+    {% endif -%}
 </head>
 <body>
     <!-- Export select values from Jekyll Frontmatter -->
