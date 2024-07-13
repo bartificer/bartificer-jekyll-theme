@@ -3,34 +3,38 @@ layout: default
 ---
 {% assign page_collection = site.collections | where: "label", page.collection | first -%}
 <h1>
-    {%- if page_collection.prefix -%}{{ page_collection.prefix }} {%- endif -%}
+    {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
     {{ page.instalment }} 
-    {%- if page_collection.total -%}
+    {%- if page_collection.total %}
     of {{ page_collection.total }}
+    {% endif -%}
     {%- endif -%}
-    {%- endif -%}
-    {%- if page_collection.prefix or page_collection.instalment -%} – {%- endif -%}
+    {%- if page_collection.prefix or page_collection.instalment %} – {% endif -%}
     {{ page.title }}
 </h1>
 
 {{ content }}
 
+<h2>page.previous</h2>
+<pre>{{ page.previous | inspect | strip_html | strip }}</pre>
+<h2>page.next</h2>
+<pre>{{ page.next | inspect | strip_html | strip }}</pre>
 <div class="btn-group mt-5 w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
     {% if page.previous -%}
     <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
-        {%- if page.previous.instalment %}{{page.previous.instalment}}. {% endif -%}
+        {%- if page.previous.instalment %} {{page.previous.instalment}}. {% endif -%}
         {{ page.previous.title }}
     </a>
-    {% else -%}
+    {%- else -%}
     <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
     {% endif -%}
     <a href="/#{{ page_collection.label }}" class="btn btn-outline-primary">{{ page_collection.title }}</a>
-    {% if page.next -%}
-    <a href="{{ page.next.url }}" class="btn btn-outline-primary" role="button">{{ page.next.title }} {%- if page.previous.instalment %}{{page.previous.instalment}}. {% endif -%}
-        <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
+    {%- if page.next -%}
+    <a href="{{ page.next.url }}" class="btn btn-outline-primary" role="button">{% if page.next.instalment %}{{page.next.instalment}}. {% endif -%}
+        {{ page.next.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
     </a>
-    {% else -%}
+    {%- else -%}
     <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">No Next (on Last) <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
     {% endif -%}
 </div>
