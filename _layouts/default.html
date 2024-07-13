@@ -34,8 +34,7 @@
     {% assign page_collection = site.collections | where: "label", page.collection | first -%}
     <title>
         {%- if page_collection.prefix %}{{ page_collection.prefix }}{% endif -%}
-        {%- if page_collection.prefix and page.instalment %} {% endif -%}
-        {%- if page.instalment %}{{ page.instalment }}{% endif -%}
+        {%- if page.instalment %}{% if page_collection.prefix %} {% endif %}{{ page.instalment }}{% endif -%}
         {%- if page_collection.prefix or page.instalment %}: {% endif -%}
         {{ page.title }}
     </title>
