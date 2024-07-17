@@ -6,13 +6,14 @@ layout: default
     {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
     {{ page.instalment }} 
-    {%- if page_collection.total %}
-    of {{ page_collection.total }}
-    {%- endif -%}
+    {%- if page_collection.total %} of {{ page_collection.total }}{% endif -%}
     {%- endif -%}
     {%- if page_collection.prefix or page_collection.instalment %}: {% endif -%}
     {{ page.title }}
 </h1>
+<pre>
+{{ page.creators | inspect | strip_html | strip }}
+</pre>
 {% if page.creators or page.date or page.tags -%}
 <small>
     {% if page.date -%}
