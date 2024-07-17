@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign page_collection = site.collections | where: "label", page.collection | first -%}
+{% assign page_collection = site.collections | find: "label", page.collection -%}
 <h1>
     {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
@@ -13,6 +13,25 @@ layout: default
     {%- if page_collection.prefix or page_collection.instalment %}: {% endif -%}
     {{ page.title }}
 </h1>
+{% if page.creators or page.date or page.tags -%}
+<small>
+    {% if page.date -%}
+    <i class="fas fa-calendar-day" aria-label="Date"></i>
+    {{ page.date | date_to_string }}
+    {% endif -%}
+    {% if page.creators -%}
+    <i class="fas fa-id-card" aria-label="Creators"></i>
+    {% assign creators_collection = site.collections | find: "label", "creators" -%}
+    {% for creator in page.creators -%}
+    {% assign creator_details = creators_collection.docs | find: "slug", creator -%}
+    <a href="{{ creator.url }}" class="badge badge-pill badge-secondary">{{ creator.display_name }}</a>
+    {% endfor -%}
+    {% endif -%}
+    {% if page.tags -%}
+        <!-- LEFT OFF HERE!!! -->
+    {%% endif -%}
+</small>
+{%- endif %}
 
 {{ content }}
 
