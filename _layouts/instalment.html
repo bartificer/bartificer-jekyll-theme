@@ -16,6 +16,7 @@ layout: default
 <pre>
 {{ page.creators | inspect | strip_html | strip }}
 {{ creators_collection | inspect | strip_html | strip }}
+{{ creators_collection.docs | first | inspect | strip_html | strip }}
 </pre>
 <small>
     {% if page.date -%}
