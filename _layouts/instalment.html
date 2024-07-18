@@ -13,11 +13,6 @@ layout: default
 </h1>
 {% if page.creators or page.date or page.tags -%}
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
-<pre>
-{{ page.creators | inspect | strip_html | strip }}
-{{ creators_collection | inspect | strip_html | strip }}
-{{ creators_collection.docs | first | inspect | strip_html | strip }}
-</pre>
 <small>
     {% if page.date -%}
     <i class="fas fa-calendar-day" aria-label="Date"></i>
@@ -27,7 +22,7 @@ layout: default
     <i class="fas fa-id-card" aria-label="Creators"></i>
     {% for creator in page.creators -%}
     {% assign creator_details = creators_collection.docs | where: "slug", creator | first -%}
-    <a href="{{ creator.url }}" class="badge badge-pill badge-secondary">{{ creator.display_name }}</a>
+    <a href="{{ creator_details.url }}" class="badge badge-pill badge-secondary">{{ creator_details.display_name }}</a>
     {% endfor -%}
     {% endif -%}
     {% if page.tags -%}
