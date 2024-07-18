@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign page_collection = site.collections | where: "label", page.collection : first -%}
+{% assign page_collection = site.collections | where: "label", page.collection | first -%}
 <h1>
     {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
