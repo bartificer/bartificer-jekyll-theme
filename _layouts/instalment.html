@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign page_collection = site.collections | find: "label", page.collection -%}
+{% assign page_collection = site.collections | where: "label", page.collection : first -%}
 <h1>
     {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
@@ -12,7 +12,7 @@ layout: default
     {{ page.title }}
 </h1>
 {% if page.creators or page.date or page.tags -%}
-{% assign creators_collection = site.collections | find: "label", "creators" -%}
+{% assign creators_collection = site.collections | where: "label", "creators" | first -%}
 <pre>
 {{ page.creators | inspect | strip_html | strip }}
 {{ creators_collection | inspect | strip_html | strip }}
@@ -25,7 +25,7 @@ layout: default
     {% if page.creators -%}
     <i class="fas fa-id-card" aria-label="Creators"></i>
     {% for creator in page.creators -%}
-    {% assign creator_details = creators_collection.docs | find: "slug", creator -%}
+    {% assign creator_details = creators_collection.docs | where: "slug", creator | first -%}
     <a href="{{ creator.url }}" class="badge badge-pill badge-secondary">{{ creator.display_name }}</a>
     {% endfor -%}
     {% endif -%}
