@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-{% # Define page-wide variables  -%}
+{% comment  -%}
+# Define page-wide variables
+{% endcomment -%}
 {% assign page_collection = site.collections | where: "label", page.collection | first -%}
 {% assign page_has_metadata = page.creators or page.date or page.tags -%}
 <h1 class="{% if page_has_metadata %}mb-0{% endif %}">
