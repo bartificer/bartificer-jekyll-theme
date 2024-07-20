@@ -70,9 +70,9 @@
     <nav class="navbar navbar-dark navbar-expand-sm bg-accent">
         {% if site.nav_brand.page -%}
         {% assign nav_brand_page = site.pages | where: "path", site.nav_brand.page | first -%}
-        <a href="{{ nav_brand_page.url }}" class="navbar-brand"></a>
+        <a href="{{ nav_brand_page.url }}" class="navbar-brand">
         {% else -%}
-        <a href="{{ site.nav_brand.url | default: default_nav_brand_url }}" target="_blank" class="navbar-brand"></a>
+        <a href="{{ site.nav_brand.url | default: default_nav_brand_url }}" target="_blank" class="navbar-brand">
         {% endif -%}
             <img src="{{site.github.baseurl}}{{site.nav_brand.src | default: default_nav_brand_src}}" alt="{{site.nav_brand.alt | default: default_nav_brand_alt}}" title="{{site.nav_brand.text | default: default_nav_brand_text}}" class="rounded" width="30" height="30">
             <span class="d-none d-lg-inline font-bartificer ml-1">{{site.nav_brand.text | default: default_nav_brand_text}}</span>
