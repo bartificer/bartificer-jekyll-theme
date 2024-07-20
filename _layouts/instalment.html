@@ -28,7 +28,7 @@ layout: default
     {% for creator in page.creators -%}
       {% assign creator_details = creators_collection.docs | where: "slug", creator | first -%}
       {% assign creator_url = creator_details.url -%}
-      {% if site_creators_page_slug and not creator.guest %}{% assign creator_url = site_creators_page.url %}{% endif -%}
+      {% if site_creators_page_slug and creator.guest == false %}{% assign creator_url = site_creators_page.url %}{% endif -%}
       <a href="{{ creator_url }}" class="badge badge-pill badge-accent text-white">{{ creator_details.display_name }}</a>
     {% endfor -%}
     </div>
