@@ -17,11 +17,11 @@ layout: default
 </h1>
 {% if page_has_metadata -%}
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
-{% assign site_creators_page_slug = creators_collection.creators_page -%}
-{% if site_creators_page_slug %}{% assign site_creators_page = site.pages | where: "slug", site_creators_page_slug | first %}{% endif -%}
+{% assign site_creators_page_path = creators_collection.creators_page -%}
+{% if site_creators_page_path %}{% assign site_creators_page = site.pages | where: "path", site_creators_page_path | first %}{% endif -%}
 <pre>
-Creators page Slug:
-{{ site_creators_page_slug | inspect | strip_html | strip }}
+Creators page Path:
+{{ site_creators_page_path | inspect | strip_html | strip }}
 
 Creators Page:
 {{ site_creators_page | inspect | strip_html | strip }}
@@ -37,8 +37,13 @@ First Site Page:
     <div class="pr-3"><i class="fas fa-id-card pr-1" aria-label="Creators"></i>
     {% for creator in page.creators -%}
       {% assign creator_details = creators_collection.docs | where: "slug", creator | first -%}
-      {% assign creator_url = creator_details.external_url -%}
-      {% if site_creators_page_slug and creator.guest == false %}{% assign creator_url = site_creators_page.url %}{% endif -%}
+      {% capture creator_url -%}
+        {% if site_creators_page and creator.guest == false -%}
+            {{ site_creators_page.url }}#{{ creator_details.slug }}
+        {% else -%}
+            {{ creator_details.external_url }}
+        {% endif %}
+      {% endcapture -%}
       <a href="{{ creator_url }}" class="badge badge-pill badge-accent text-white">{{ creator_details.display_name }}</a>
     {% endfor -%}
     </div>
