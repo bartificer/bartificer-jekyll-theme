@@ -18,7 +18,7 @@ layout: default
 {% if page_has_metadata -%}
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
 {% assign site_creators_page_slug = creators_collection.creators_page -%}
-{% if site_creators_page_slug %}{% assign site_creators_page = site.pages | where "slug", site_creators_page_slug | first %}{% endif -%}
+{% if site_creators_page_slug %}{% assign site_creators_page = site.pages | where: "slug", site_creators_page_slug | first %}{% endif -%}
 <small class="mb-3 text-muted d-flex">
     {% if page.date -%}
     <div class="pr-3"><i class="fas fa-calendar-day pr-1" aria-label="Date"></i> {{ page.date | date_to_string }}</div>
