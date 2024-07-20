@@ -17,6 +17,8 @@ layout: default
 </h1>
 {% if page_has_metadata -%}
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
+{% assign site_creators_page_slug = creators_collection.creators_page -%}
+{% if site_creators_page_slug %}{% assign site_creators_page = site.pages | where "slug", site_creators_page_slug | first %}{% endif -%}
 <small class="mb-3 text-muted d-flex">
     {% if page.date -%}
     <div class="pr-3"><i class="fas fa-calendar-day pr-1" aria-label="Date"></i> {{ page.date | date_to_string }}</div>
@@ -25,7 +27,9 @@ layout: default
     <div class="pr-3"><i class="fas fa-id-card pr-1" aria-label="Creators"></i>
     {% for creator in page.creators -%}
       {% assign creator_details = creators_collection.docs | where: "slug", creator | first -%}
-      <a href="{{ creator_details.url }}" class="badge badge-pill badge-accent text-white">{{ creator_details.display_name }}</a>
+      {% assign creator_url = creator_details.url -%}
+      {% if site_creators_page_slug and not creator.guest %}{% assign creator_url = site_creators_page.url %}{% endif -%}
+      <a href="{{ creator_url }}" class="badge badge-pill badge-accent text-white">{{ creator_details.display_name }}</a>
     {% endfor -%}
     </div>
     {% endif -%}
