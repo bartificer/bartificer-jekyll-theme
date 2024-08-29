@@ -36,7 +36,7 @@
         {%- if page_collection.prefix %}{{ page_collection.prefix }}{% endif -%}
         {%- if page.instalment %}{% if page_collection.prefix %}{{ " " }}{% endif %}{{ page.instalment }}{% endif -%}
         {%- if page_collection.prefix or page.instalment %}: {% endif -%}
-        {{ page.title }}
+        {{- page.title }}{% if page.miniseries %} ({{ page.miniseries }}){% endif -%}
     </title>
     {% else -%}
     <title>{{ page.title | default: site.title }}</title>

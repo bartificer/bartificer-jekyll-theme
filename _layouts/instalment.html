@@ -9,11 +9,11 @@ layout: default
 <h1 class="{% if page_has_metadata %}mb-0{% endif %}">
     {%- if page_collection.prefix -%}{{ page_collection.prefix }} {% endif -%}
     {%- if page.instalment -%}
-    {{ page.instalment }} 
+    {{- page.instalment -}} 
     {%- if page_collection.total %} of {{ page_collection.total }}{% endif -%}
     {%- endif -%}
     {%- if page_collection.prefix or page_collection.instalment %}: {% endif -%}
-    {{ page.title }}
+    {{- page.title }}{% if page.miniseries %} ({{ page.miniseries }}){% endif -%}
 </h1>
 {% if page_has_metadata -%}
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
