@@ -64,28 +64,30 @@ layout: default
         {%- assign miniseries_next_doc = miniseries_instalment %}
       {%- endif %}
     {%- endfor %}
-    <div class="btn-group btn-group-sm w-100 mx-5 px-5 text-center" role="group" aria-label="Miniseries Navigation">
-      {% if miniseries_prev_doc != "" -%}
-      <a href="{{ miniseries_prev_doc.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
-          {{ miniseries_prev_doc.title }}
-      </a>
-      {%- else -%}
-      <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
-      {% endif -%}
-      <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">{{ page.miniseries }} Miniseries</a>
-      {%- if miniseries_next_doc != "" -%}
-      <a href="{{ miniseries_next_doc.url }}" class="btn btn-outline-primary" role="button">
-          {{ miniseries_next_doc.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
-      </a>
-      {%- else -%}
-      <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">No Next (on Last) <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
-      {% endif -%}
+    <div class="mx-5 mb-1 text-center">
+        <div class="btn-group btn-group-sm w-100 px-5 text-center" role="group" aria-label="Miniseries Navigation">
+          {% if miniseries_prev_doc != "" -%}
+          <a href="{{ miniseries_prev_doc.url }}" class="btn btn-secondary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
+              {{ miniseries_prev_doc.title }}
+          </a>
+          {%- else -%}
+          <a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
+          {% endif -%}
+          <a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">{{ page.miniseries }} Miniseries</a>
+          {%- if miniseries_next_doc != "" -%}
+          <a href="{{ miniseries_next_doc.url }}" class="btn btn-outline-primary" role="button">
+              {{ miniseries_next_doc.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
+          </a>
+          {%- else -%}
+          <a href="#" class="btn btn-secondary disabled" role="button" aria-disabled="true">No Next (on Last) <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
+          {% endif -%}
+        </div>
     </div>
     {%- endif -%}
 
     <div class="btn-group w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
         {% if page.previous -%}
-        <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
+        <a href="{{ page.previous.url }}" class="btn btn-secondary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
             {%- if page.previous.instalment %} {{page.previous.instalment}}. {% endif -%}
             {{ page.previous.title }}
         </a>
