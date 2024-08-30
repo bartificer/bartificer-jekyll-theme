@@ -28,6 +28,7 @@
     {% assign opengraph_image = page.opengraph.image | default: site.opengraph.image -%}
     {% if opengraph_image %}<meta property="og:image" content="{{opengraph_image}}" />{% endif -%}
     {% if page.opengraph.audio %}<meta property="og:audio" content="{{page.opengraph.audio}}" />{% endif -%}
+    {% if page.opengraph.video %}<meta property="og:video" content="{{page.opengraph.video}}" />{% endif -%}
 
     <!-- Set the page title as appropriate -->
     {% if page.collection -%}
