@@ -56,13 +56,17 @@ layout: default
 {%- if page.miniseries %}
 {%- assign miniseries_docs = page_collection.docs | where: "miniseries", page.miniseries %}
 <!--
-{%- assign prev_doc = "" %}
-{%- assign next_doc = "" %}
+{%- assign miniseries_prev_doc = "" %}
+{%- assign miniseries_next_doc = "" %}
 {%- for miniseries_instalment in miniseries_docs %}
 - title='{{ miniseries_instalment.title }}' & instalment='{{ miniseries_instalment.instalment }}'
 {%- if miniseries_instalment.instalment < page.instalment %}
-{%- assign prev_doc = miniseries_instalment %}
-updating prev_doc to {{ miniseries_instalment.instalment }}
+{%- assign miniseries_prev_doc = miniseries_instalment %}
+updating miniseries_prev_doc to {{ miniseries_instalment.instalment }}
+{%- endif %}
+{%- if miniseries_next_doc == "" and miniseries_instalment.instalment > page.instalment %}
+{%- assign miniseries_next_doc = miniseries_instalment %}
+updating miniseries_next_doc to {{ miniseries_instalment.instalment }}
 {%- endif %}
 {%- endfor %}
 -->
