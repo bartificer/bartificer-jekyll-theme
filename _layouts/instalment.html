@@ -70,6 +70,23 @@ updating miniseries_next_doc to {{ miniseries_instalment.instalment }}
 {%- endif %}
 {%- endfor %}
 -->
+<div class="btn-group btn-group-sm mt-5 w-75 px-5 text-center" role="group" aria-label="Miniseries Navigation">
+  {% if miniseries_prev_doc -%}
+  <a href="{{ miniseries_prev_doc.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
+      {{ miniseries_prev_doc.title }}
+  </a>
+  {%- else -%}
+  <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
+  {% endif -%}
+  <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">{{ page.miniseries }} Miniseries</a>
+  {%- if miniseries_next_doc -%}
+  <a href="{{ miniseries_next_doc.url }}" class="btn btn-outline-primary" role="button">
+      {{ miniseries_prev_doc.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
+  </a>
+  {%- else -%}
+  <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true">No Next (on Last) <i class="far fa-arrow-alt-circle-right" aria-hidden></i></a>
+  {% endif -%}
+</div>
 {%- endif -%}
 
 <div class="btn-group mt-5 w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
@@ -81,7 +98,7 @@ updating miniseries_next_doc to {{ miniseries_instalment.instalment }}
     {%- else -%}
     <a href="#" class="btn btn-outline-primary disabled" role="button" aria-disabled="true"><i class="far fa-arrow-alt-circle-left" aria-hidden></i> No Previous (on First)</a>
     {% endif -%}
-    <a href="/#{{ page_collection.label }}" class="btn btn-outline-primary">{{ page_collection.title }}</a>
+    <a href="/#{{ page_collection.label }}" class="btn btn-outline-primary" role="button">{{ page_collection.title }}</a>
     {%- if page.next -%}
     <a href="{{ page.next.url }}" class="btn btn-outline-primary" role="button">{% if page.next.instalment %}{{page.next.instalment}}. {% endif -%}
         {{ page.next.title }} <i class="far fa-arrow-alt-circle-right" aria-label="Next"></i>
