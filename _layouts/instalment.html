@@ -51,7 +51,7 @@ layout: default
 {{ content }}
 
 <!-- miniseries={{ page.miniseries }}' -->
-<!-- page_collection.docs: {{ page_collection.docs | inspect }}' -->
+<!-- page_collection.docs (123): {{ page_collection.docs | where: "instalment", 123 | first | inspect }} -->
 {%- if page.miniseries %}
 {%- assign miniseries_previous = page_collection.docs | where: "miniseries", page.miniseries | where_exp: "item", "item.instalment < page.instalment" | last %}
 <!-- {{ miniseries_previous.title }} -->
