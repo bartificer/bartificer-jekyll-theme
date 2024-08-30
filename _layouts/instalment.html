@@ -50,6 +50,11 @@ layout: default
 
 {{ content }}
 
+{%- if page.miniseries %}
+{%- assign miniseries_previous = page_collection.docs | where: "miniseries", page.miniseries | where_exp: "item", "item.instalment < page.instalment" | last %}
+<!-- {{ miniseries_previous.title }} -->
+{%- endif -%}
+
 <div class="btn-group mt-5 w-100 px-5 text-center" role="group" aria-label="Instalment Navigation">
     {% if page.previous -%}
     <a href="{{ page.previous.url }}" class="btn btn-outline-primary" role="button"><i class="far fa-arrow-alt-circle-left" aria-label="Previous"></i>
