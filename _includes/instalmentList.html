@@ -1,10 +1,11 @@
 <ul>
     {% for instalment in include.my_collection.docs -%}
     <li>
+        {-% if page.miniseries %}<span class="badge badge-primary">{{ page.miniseries }}</span>{% endif %}
         <a href="{{ instalment.url }}">
         {%- if include.my_collection.prefix %}{{ include.my_collection.prefix }}{% endif -%}
         {%- if instalment.instalment %}{% if include.my_collection.prefix %} {% endif %}{{ instalment.instalment }}{% endif -%}
-        {%- if include.my_collection.prefix or instalment.instalment %} — {% endif %}{% if page.miniseries %}{{ page.miniseries }}: {% endif %}{{ instalment.title -}}
+        {%- if include.my_collection.prefix or instalment.instalment %} — {% endif %}{{ instalment.title -}}
         </a>
     </li>
     {% endfor -%}
