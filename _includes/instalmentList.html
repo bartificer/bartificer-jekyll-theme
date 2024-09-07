@@ -7,8 +7,8 @@
         {%- if instalment.instalment %}{% if include.my_collection.prefix %}{{ " " }}{% endif %}{{ instalment.instalment }}{% endif -%}
         {%- if include.my_collection.prefix or instalment.instalment %} — {% endif %}{{ instalment.title -}}
         </a>
-        {%- if instalment.tags %}
-        <small class="text-muted"><i class="fas fa-tag" aria-label="Tags"></i>
+        {%- unless instalment.tags == empty %}
+        <small class="text-muted"><i class="fas fa-tag fa-sm" aria-label="Tags"></i>
         {%- for tag in instalment.tags %}
         <span class="badge badge-accent-light text-accent">{{ tag }}</span>
         {%- endfor %}
