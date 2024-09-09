@@ -19,7 +19,7 @@ layout: default
 {% assign creators_collection = site.collections | where: "label", "creators" | first -%}
 {% assign site_creators_page_path = creators_collection.creators_page -%}
 {% if site_creators_page_path %}{% assign site_creators_page = site.pages | where: "path", site_creators_page_path | first %}{% endif -%}
-<small class="mb-3 text-muted d-flex">
+<small class="mb-3 text-muted d-flex flex-column flex-md-row">
     {% if page.date -%}
     <div class="pr-3"><i class="fas fa-calendar-day pr-1" aria-label="Date"></i> {{ page.date | date_to_string }}</div>
     {% endif -%}
