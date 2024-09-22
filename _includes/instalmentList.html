@@ -2,9 +2,10 @@
     {% for instalment in include.my_collection.docs -%}
     <li>
         <a href="{{ instalment.url }}">
+        {%- if include.my_collection.prefix or instalment.instalment %}<span class="text-monospace">{% endif -%}
         {%- if include.my_collection.prefix %}{{ include.my_collection.prefix }}{% endif -%}
         {%- if instalment.instalment %}{% if include.my_collection.prefix %}{{ " " }}{% endif %}{{ instalment.instalment }}{% endif -%}
-        {%- if include.my_collection.prefix or instalment.instalment %} — {% endif %}{%- if instalment.miniseries %}<span class="badge badge-primary">{{ instalment.miniseries }}</span> {% endif %}{{ instalment.title -}}
+        {%- if include.my_collection.prefix or instalment.instalment %}</span> — {% endif %}{%- if instalment.miniseries %}<span class="badge badge-primary">{{ instalment.miniseries }}</span> {% endif %}{{ instalment.title -}}
         </a>
         {%- unless instalment.tags == empty %}
         <small class="text-muted"><i class="fas fa-tag fa-sm" aria-label="Tags"></i>
