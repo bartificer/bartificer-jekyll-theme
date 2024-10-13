@@ -104,7 +104,7 @@ main{
         @extend .rounded;
     }
     
-    // style images
+    // style images & figures
     img{
     	@extend .img-fluid;
     	@extend .border;
@@ -113,6 +113,22 @@ main{
     	@extend .d-block;
     	@extend .mx-auto;
     	@extend .my-3;
+    }
+    figcaption{
+        @extend .text-center;
+        @extend .text-muted;
+        @extend .font-italic;
+    }
+    // groups of figures the wrap nicely across multiple lines in a responsive way
+    div.fig-group{
+        @extend .d-flex;
+        @extend .flex-column;
+        @extend .flex-md-row;
+        @extend .justify-content-around;
+        @extend .flex-wrap;
+        figure{
+            @extend .px-1;
+        }
     }
     
     // style tables
