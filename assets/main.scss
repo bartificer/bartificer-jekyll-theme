@@ -167,6 +167,20 @@ main{
             @extend .h4;
         }
     }
+
+    // provides classes for lists with alternative numbering types
+    ol.lowerAlpha{
+        list-style-type: lower-alpha
+    }
+    ol.upperAlpha{
+        list-style-type: upper-alpha
+    }
+    ol.lowerRoman{
+        list-style-type: lower-roman
+    }
+    ol.upperRoman{
+        list-style-type: upper-roman
+    }
 }
 
 // load any custom styles defined by the user
